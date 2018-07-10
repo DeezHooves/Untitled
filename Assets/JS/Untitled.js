@@ -40,10 +40,7 @@ checker.posY = 460;
 // Create inventory for shopkeeper with names, prices, quantity
 // create inventory for player
 
-function hideBoxes(){
-    chatBox.classList.add("hide")
-    choiceBox.classList.add("hide")
-}
+
 
 var shopInventory = {
     bomb: {price: 3, qty: 10},
@@ -278,6 +275,10 @@ function px(num) {
 
 // to interact with npc
 
+function hideBoxes(){
+    chatBox.classList.add("hide")
+    choiceBox.classList.add("hide")
+}
 
 function buySellLoop(){
     for(var i = 0; i < buySell.length; i++){
