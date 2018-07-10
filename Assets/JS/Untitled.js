@@ -15,11 +15,15 @@ const shopList = document.querySelector("#shopList");
 const shopPricing = document.querySelector("#shopPricing");
 const shopOptions = document.querySelector("#shopOptions");
 const shopMessage = document.querySelector("#shopbees");
-let lis = document.querySelectorAll("li");
+let buySell = document.querySelectorAll("h2 + ul li");
+let enterCancel = document.querySelectorAll("h3 + ul li");
 //Don't remove this guy
 let keys = {};
 
-// shopInterface.classList.remove("hide")    
+// shopInterface.classList.remove("hide")  
+shopKeep.classList.remove("hide")
+shopKeep.style.left = "125px";  
+shopKeep.style.top = "550px";  
 
 tLayer.style.display = "none";
 wLayer.style.display = "none";
@@ -36,6 +40,10 @@ checker.posY = 460;
 // Create inventory for shopkeeper with names, prices, quantity
 // create inventory for player
 
+function hideBoxes(){
+    chatBox.classList.add("hide")
+    choiceBox.classList.add("hide")
+}
 
 var shopInventory = {
     bomb: {price: 3, qty: 10},
@@ -48,25 +56,6 @@ var playerTacos = 250
 
 var playerInventory = {
     
-}
-
-
-for(var i = 0; i < lis.length; i++){
-    lis[i].addEventListener("click", function(){
-        if(this == lis[0]){
-            //open shop
-            shopInterface.classList.remove("hide");
-            shopHeader.textContent = "Buying!";
-        } else if(this == lis[1]) {
-            //open player inventory
-            shopInterface.classList.remove("hide");
-            shopHeader.textContent = "Selling!";
-        } else {
-            // close the chatbox
-            chatBox.classList.add("hide")
-            choiceBox.classList.add("hide")
-        }
-    })
 }
 
 
@@ -173,6 +162,7 @@ document.body.addEventListener("keydown", function(event){
         } else if(getDistance(player, shopKeep) <= 55) {
             chatBox.classList.remove("hide")
             choiceBox.classList.remove("hide")
+            buySellLoop()
             // if player.chatboxOpen = true
             // 
             chatBox.textContent = "Hey there! What can I help with?";
@@ -289,3 +279,38 @@ function px(num) {
 // to interact with npc
 
 
+function buySellLoop(){
+    for(var i = 0; i < buySell.length; i++){
+        buySell[i].addEventListener("click", function(){
+            if(this == buySell[0]){
+                //open shop
+                hideBoxes();
+                enterCancelLoop();
+                shopInterface.classList.remove("hide");
+                shopHeader.textContent = "Buying!";
+            } else if(this == buySell[1]) {
+                //open player inventory
+                hideBoxes();
+                enterCancelLoop();
+                shopInterface.classList.remove("hide");
+                shopHeader.textContent = "Selling!";
+            } else {
+                // close the chatbox
+                hideBoxes();
+            }
+        })
+    }
+}
+
+function enterCancelLoop(){
+    for(var i = 0; i < enterCancel.length; i++){
+        enterCancel[i].addEventListener("click", function(){
+            if(this == enterCancel[0]){
+                // run logic to process transaction
+                console.log("Order processed!");
+            } else {
+                shopInterface.classList.add("hide");
+            }
+        })
+    }
+}

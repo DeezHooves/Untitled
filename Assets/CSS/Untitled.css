@@ -131,6 +131,11 @@ a + div h1 {
     margin: 0;
 }
 
+#shopList {
+    height: 250px;
+    padding: 2em;
+}
+
 #shopPricing {
     right: 45%;
     width: 55%;
