@@ -70,7 +70,7 @@ getDistance = function( objA, objB ) {
 // if player.distance(Ask pythagoras)
 // function(player,npc) == distance between two
 // if function(1,2) < *** {
-//      if key down, e = true, add dialogue box
+//      if key down, e = true, add dialogue box 
 //}
 // create function, taking 2 objects as arguments to find distance (Ask Pythagoras) 
 
