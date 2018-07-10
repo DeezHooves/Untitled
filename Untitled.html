@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Untitled</title>
+	<link rel="stylesheet" type="text/css" href="Assets\CSS\Untitled.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+	
+	
+<div id="viewport">
+	<!-- Stopped working after name change -->
+	<div id="gameWorld">
+		<img id="world" class="map"src="Assets/Maps/WorldMap.png" />
+		<img id="town" class="hide map" src="Assets/Maps/Town.png" />
+		<img id="shopKeep" class="hide" src="Assets/Sprites/Singles/NPC1.png" />
+		<img id="worldLayer"class="hide layer"src="Assets/Maps/WorldMapA.png" />
+		<img id="townLayer"class="hide layer" src="Assets/Maps/TownA.png" />
+		<div id="checker"><img src="Assets/Sprites/Singles/1x1.png" /></div>
+		<div id="player"><img src="Assets/Sprites/Singles/T1.png" /></div>
+	</div>
+
+	<div id="chatBox" class="hide boxes">
+		<!--<ol>
+				<li> -->Hey you! What are you doing??<!--</li>
+		</ol> -->
+	</div>
+
+	<div id="choiceBox" class="hide boxes">
+		<ul>
+			<!-- top of options list is showing, and the lis stretch further than the parent box -->
+			<li>Buy</li>
+			<li>Sell</li>
+			<li>Leave</li>
+		</ul>
+	</div>
+
+	<!-- <div id="shopInvBox" class="hide">
+		 General styling -->
+		<!-- <h1><i class="fas fa-money-bill-wave-alt"></i> Shop</h1>
+		<h3>Tacos: </h3>
+		<ul>
+
+		</ul>
+		<h4>Leave</h4>
+	</div> -->
+
+	<a href="placeholder" class="hide">placeholder</a>
+
+	<div id="shopInterface" class="hide">
+		<h1 id="shopHeader" class="shop">default text!</h1>
+		<div id="shopList" class="shop">
+			<ol>
+				<li>This item is for sale</li>
+			</ol>
+		</div>
+		<div id="shopPricing" class="shop">
+			<p><span>item</span> costs <span>price</span></p>
+		</div>
+		<div id="shopOptions" class="shop">
+			<ul>
+				<li>Enter</li>
+				<li>Cancel</li>
+			</ul>
+		</div>
+		<div id="shopMessage" class="shop">
+			Sure I guess!
+		</div>
+	</div>
+</div>
+
+
+
+<!--
+
+	World map //
+		create town //
+			create objects
+				create barriers
+					Make obstacles
+		Access town from map
+
+		sprites
+			create user //
+				add sprite  //
+					Add movement //
+					X,Y coordinates positioning //kinda
+				create permissions
+				create health, stats, and inventory
+
+			create npc 
+				add sprite //
+				create permissions
+				create inventory
+
+		
+				
+	dialogue box //
+		font //
+		text speed
+
+	create currency //
+		create shop system
+
+-->
+
+<!-- 
+
+viewport relative
+	gameworld
+		map, sprites, everything
+
+map and sprites, children of gameworld
+
+	big container, that world sits in
+		create amount you can see
+			under, layer position relative
+			sprites, part of the world
+			shift the map around
+
+
+ -->
+
+<script type="text/javascript" src="Assets\JS\Untitled.js"></script>
+<script src="https://gist.github.com/PureKrome/5184077.js"></script>
+</body>
+</html>
+
+
+<!-- 
+
+	core.safecrlf
+	git config
+
+ -->

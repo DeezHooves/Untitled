@@ -1,0 +1,47 @@
+.sprite {
+    background-image: url(Assets/Sprites/Spritesheets/Bears.spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-Bears {
+    width: 384px;
+    height: 256px;
+    background-position: -5px -5px;
+}
+
+.sprite-github {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -271px;
+}
+
+.sprite-gmail {
+    width: 30px;
+    height: 30px;
+    background-position: -45px -271px;
+}
+
+.sprite-linkedin {
+    width: 30px;
+    height: 30px;
+    background-position: -85px -271px;
+}
+
+.sprite-stackoverflow {
+    width: 30px;
+    height: 30px;
+    background-position: -125px -271px;
+}
+
+.sprite-tumblr {
+    width: 30px;
+    height: 30px;
+    background-position: -165px -271px;
+}
+
+.sprite-twitter {
+    width: 30px;
+    height: 30px;
+    background-position: -205px -271px;
+}
