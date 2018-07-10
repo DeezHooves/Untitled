@@ -132,7 +132,8 @@ a + div h1 {
 }
 
 #shopList {
-    height: 250px;
+    height: 17.5%;
+    width: 100%;
     padding: 2em;
 }
 
