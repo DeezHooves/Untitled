@@ -17,13 +17,16 @@ const shopOptions = document.querySelector("#shopOptions");
 const shopMessage = document.querySelector("#shopbees");
 let buySell = document.querySelectorAll("h2 + ul li");
 let enterCancel = document.querySelectorAll("h3 + ul li");
+let shopItemName = document.querySelector("#shopItemName")
+let shopItemPrice = document.querySelector("#shopItemPrice")
+let playerCurrentTacos = document.querySelector("#playerCurrentTacos")
 //Don't remove this guy
 let keys = {};
 
 // shopInterface.classList.remove("hide")  
-shopKeep.classList.remove("hide")
-shopKeep.style.left = "125px";  
-shopKeep.style.top = "550px";  
+// shopKeep.classList.remove("hide")
+// shopKeep.style.left = "125px";  
+// shopKeep.style.top = "550px";  
 
 tLayer.style.display = "none";
 wLayer.style.display = "none";
@@ -49,7 +52,6 @@ var shopInventory = {
 }
 
 var playerTacos = 250
-
 
 var playerInventory = {
     
@@ -288,11 +290,28 @@ function buySellLoop(){
                 hideBoxes();
                 enterCancelLoop();
                 shopInterface.classList.remove("hide");
+                playerCurrentTacos.textContent = playerTacos
                 shopHeader.textContent = "Buying!";
+                shopList.innerHTML = "";
+                for(var item in shopInventory) {
+                    // create an element for each item, and instert that into the list 
+                    var li = document.createElement("li");
+                    li.innerHTML = item;
+                    li.itemtype = item;
+                    shopList.appendChild(li);
+                    li.addEventListener("click", function(event){
+                        selectShopItem(event.target)
+                    })
+                }
+                var firstli = document.querySelector("ol#shopList li")
+                // firstli.classList.add("selected")
+                selectShopItem(firstli)
+                
             } else if(this == buySell[1]) {
                 //open player inventory
                 hideBoxes();
                 enterCancelLoop();
+                playerCurrentTacos.textContent = playerTacos
                 shopInterface.classList.remove("hide");
                 shopHeader.textContent = "Selling!";
             } else {
@@ -309,6 +328,9 @@ function enterCancelLoop(){
             if(this == enterCancel[0]){
                 // run logic to process transaction
                 console.log("Order processed!");
+                // when enter is selected, run price of selected item against playertacos,
+                // if player has enough tacos, let them purchase the item
+                // else give an error message
             } else {
                 shopInterface.classList.add("hide");
             }
@@ -316,3 +338,12 @@ function enterCancelLoop(){
     }
 }
 
+function selectShopItem(li){
+    var multiLis = document.querySelectorAll("ol#shopList li")
+    multiLis.forEach(function(foo){
+        foo.classList.remove("selected");
+    })
+    li.classList.add("selected");
+    shopItemName.innerHTML = li.itemtype;
+    shopItemPrice.innerHTML = shopInventory[li.itemtype].price;
+}

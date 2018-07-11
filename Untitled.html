@@ -17,7 +17,12 @@
 		<img id="worldLayer"class="hide layer"src="Assets/Maps/WorldMapA.png" />
 		<img id="townLayer"class="hide layer" src="Assets/Maps/TownA.png" />
 		<div id="checker"><img src="Assets/Sprites/Singles/1x1.png" /></div>
-		<div id="player"><img src="Assets/Sprites/Singles/T1.png" /></div>
+		<div id="player"><img src="Assets/Sprites/Singles/T1.png" />
+		<!-- 
+			make spritesheet the background image.
+			Make the div the size of one of the sprites, request a specific picture depending on the movement.
+		 -->
+		</div>
 	</div>
 
 	<div id="chatBox" class="hide boxes">
@@ -49,22 +54,26 @@
 	<a href="placeholder" class="hide">placeholder</a>
 
 	<div id="shopInterface" class="hide">
-		<h1 id="shopHeader" class="shop">default text!</h1>
-		<h2><span id="playerCurrentTacos">0</span> tacos!</h2>
-		<div id="shopList" class="shop">
-			<ol>
+		<div>
+			<h1 id="shopHeader" class="shop">default text!</h1>
+			<h2><span id="playerCurrentTacos">0</span> tacos!</h2>
+		</div>
+		<div>
+			<ol id="shopList" class="shop">
 				<li>This item is for sale</li>
 			</ol>
 		</div>
-		<div id="shopPricing" class="shop">
-			<p><span id="shopItemName">item</span> costs <span id="shopItemPrice">price</span></p>
-		</div>
-		<div id="shopOptions" class="shop">
-			<h3 class="hide">Your mother.</h3>
-			<ul>
-				<li>Enter</li>
-				<li>Cancel</li>
-			</ul>
+		<div class="lineLevel">
+			<div id="shopPricing" class="shop">
+				<p><span id="shopItemName">item</span> costs <span id="shopItemPrice">price</span> tacos!</p>
+			</div>
+			<div id="shopOptions" class="shop">
+				<h3 class="hide">Your mother.</h3>
+				<ul>
+					<li>Enter</li>
+					<li>Cancel</li>
+				</ul>
+			</div>
 		</div>
 		<div id="shopMessage" class="shop">
 			Sure I guess!

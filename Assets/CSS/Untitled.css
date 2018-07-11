@@ -31,10 +31,13 @@ ul li {
     height: 100%;
     width: 100%;
     padding: 5px;
+    cursor: pointer;
 }
 
 ol li {
     border: solid thin rgba(175, 250, 175, 0.45);
+    cursor: pointer;
+    user-select: none;
 }
 
 a + div {
@@ -114,6 +117,10 @@ a + div h1 {
     /* border: solid 55px rgba(180,255,180,0.5); */
 }
 
+#shopInterface {
+    overflow: auto;
+}
+
 #shopKeep {
     background: rgba( 215, 215, 215, 0.5);
     position: relative;
@@ -182,4 +189,8 @@ a + div h1 {
 .layer {
     opacity: 0.5;
     z-index: 1;
+}
+
+.selected {
+    background-color: blue;
 }
