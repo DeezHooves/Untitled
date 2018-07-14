@@ -54,20 +54,20 @@
 	<a href="placeholder" class="hide">placeholder</a>
 
 	<div id="shopInterface" class="hide">
-		<div id="shopHeader">
-			<h1 class="flexOrder">default text!</h1>
-			<h2 class="flexOrder"><span id="playerCurrentTacos">0</span> tacos!</h2>
+		<div id="shopHeader" class="shop">
+			<div class="shopFirst">default text!</div>
+			<div class="shopSecond"><span id="playerCurrentTacos">0</span> tacos!</div>
 		</div>
-		<div>
-			<ol id="shopList" class="shop">
+		<div class="shop">
+			<ol id="shopList">
 				<li>This item is for sale</li>
 			</ol>
 		</div>
-		<div class="lineLevel">
-			<div id="shopPricing" class="shop">
+		<div id="lineLevel">
+			<div id="shopPricing" class="shop shopFirst">
 				<p><span id="shopItemName">item</span> costs <span id="shopItemPrice">price</span> tacos!</p>
 			</div>
-			<div id="shopOptions" class="shop">
+			<div id="shopOptions" class="shop shopSecond">
 				<h3 class="hide">Your mother.</h3>
 				<ul>
 					<li>Enter</li>
@@ -82,6 +82,10 @@
 </div>
 
 
+<!-- 
+
+ -->
+
 
 <!--
 
@@ -90,7 +94,7 @@
 			create objects
 				create barriers
 					Make obstacles
-		Access town from map
+		Access town from map //
 
 		sprites
 			create user //

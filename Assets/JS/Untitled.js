@@ -197,6 +197,9 @@ function buySellLoop(){
                 //open shop
                 hideBoxes();
                 enterCancelLoop();
+                // shopInterface.classList.add("flex")
+                // shopHeader.classList.add("flex")
+                // shopPricing.classList.add("flex")
                 shopInterface.classList.remove("hide");
                 playerCurrentTacos.textContent = playerTacos
                 shopHeader.textContent = "Buying!";

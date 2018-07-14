@@ -26,7 +26,8 @@ ol {
 }
 
 ul li {
-    border: solid 2px rgba(197, 139, 13, 0.75);
+    border: solid 2px rgba(20, 14, 2, 0.75);
+    background-color: #c3c3c3;
     position: relative;
     height: 100%;
     width: 100%;
@@ -55,17 +56,6 @@ a + div h1 {
     padding-left: 20px;
 }
 
-.shop {
-    background-color: rgba(75, 113, 218, 0.25);
-    padding: 1em;
-    margin: 15px;
-    box-sizing: border-box;
-}
-
-/* ol {
-    list-style: none;
-} */
-
 #viewport {
     /* margin: auto; */
     /* background-color: rgba(255, 2555, 255, 0.5); */
@@ -90,9 +80,9 @@ a + div h1 {
     left: 100px;
     top: 525px;
     z-index: 2;
-/* 
+    /* 
     background-color: rgba(255, 0, 0, 0.5); */
-
+    
     /* border: solid 3px purple; */
     /* width: 15%;
     height: 15%; */
@@ -119,7 +109,10 @@ a + div h1 {
 
 #shopInterface {
     overflow: auto;
-    width: 45%;
+    background-color: #c3c3c3;
+    height: 75%;
+    padding: 2px;
+    /* flex-direction: column; */
 }
 
 #shopKeep {
@@ -141,9 +134,21 @@ a + div h1 {
 
 #shopHeader {
     display: flex;
-    flex-direction: row;
-    flex-flow: space-around;
-    width: 50px;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#lineLevel {
+    display: flex;
+    justify-content: space-around;
+}
+
+.shopFirst {
+    flex-basis: 60%;
+}
+
+.shopSecond {
+    flex-basis: 30%;
 }
 
 #shopList {
@@ -154,19 +159,22 @@ a + div h1 {
 }
 
 #shopPricing {
-    right: 45%;
-    width: 55%;
-    margin-right: 5%;
+    flex-basis: 55%;
 }
 
 #shopOptions {
-    float: right;
-    width: 35%;
-    margin-left: 5%;
+    flex-basis: 35%;
 }
 
 #shopMessage {
     height: 125px;
+    padding: 10%;
+}
+
+.shop {
+    background-color: rgba(75, 113, 218, 0.25);
+    padding: 1em;
+    box-sizing: border-box;
 }
 
 .boxes {
@@ -201,4 +209,13 @@ a + div h1 {
 
 .selected {
     background-color: blue;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+#shopInterface div {
+    border: 5px green solid;
 }
