@@ -215,7 +215,6 @@ function buySellLoop(){
                     })
                 }
                 var firstli = document.querySelector("ol#shopList li")
-                // firstli.classList.add("selected")
                 selectShopItem(firstli)
                 
             } else if(this == buySell[1]) {
@@ -250,7 +249,7 @@ function enterCancelLoop(){
 }
 
 function selectShopItem(li){
-    var multiLis = document.querySelectorAll("ol#shopList li")
+    var multiLis = document.querySelectorAll("ol#shopItems li")
     multiLis.forEach(function(foo){
         foo.classList.remove("selected");
     })
