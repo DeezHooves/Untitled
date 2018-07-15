@@ -34,7 +34,6 @@ ul li {
     background-color: #c3c3c3;
     position: relative;
     height: 100%;
-    width: 100%;
     padding: 5px;
     cursor: pointer;
 }
@@ -146,7 +145,7 @@ a + div h1 {
 #lineLevel {
     display: flex;
     justify-content: space-between;
-    height:
+    height: 20%;
 }
 
 .shopFirst {
