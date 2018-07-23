@@ -186,8 +186,9 @@ function px(num) {
 }
 
 function hideBoxes(){
-    chatBox.classList.add("hide")
-    choiceBox.classList.add("hide")
+    chatBox.classList.add("hide");
+    choiceBox.classList.add("hide");
+    shopInterface.classList.add("hide");
 }
 
 function buySellLoop(){
@@ -214,7 +215,7 @@ function buySellLoop(){
                         selectShopItem(event.target)
                     })
                 }
-                var firstli = document.querySelector("ol#shopList li")
+                var firstli = document.querySelector("div#shopList li")
                 selectShopItem(firstli)
                 
             } else if(this == buySell[1]) {
@@ -242,14 +243,14 @@ function enterCancelLoop(){
                 // if player has enough tacos, let them purchase the item
                 // else give an error message
             } else {
-                shopInterface.classList.add("hide");
+                hideBoxes();
             }
         })
     }
 }
 
 function selectShopItem(li){
-    var multiLis = document.querySelectorAll("ol#shopItems li")
+    var multiLis = document.querySelectorAll("div#shopList li")
     multiLis.forEach(function(foo){
         foo.classList.remove("selected");
     })

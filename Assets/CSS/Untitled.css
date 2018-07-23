@@ -15,6 +15,11 @@ body {
     font-family: "Comic Sans MS", cursive;
 }
 
+p {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
 li{
     list-style: none;
 }
@@ -22,6 +27,8 @@ li{
 ul {
     list-style: none;
     padding: 0px;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
 }
 
 ol {
@@ -131,7 +138,7 @@ a + div h1 {
 
 #choiceBox {
     bottom: 100px;
-    padding: 0;
+    /* padding: 0; */
     margin: 0;
 }
 
@@ -168,6 +175,7 @@ a + div h1 {
 
 #shopOptions {
     flex-basis: 35%;
+    padding: 4px;
 }
 
 #shopMessage {
