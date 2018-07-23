@@ -14,7 +14,7 @@ const shopHeader = document.querySelector("#shopHeader");
 const shopList = document.querySelector("#shopList");
 const shopPricing = document.querySelector("#shopPricing");
 const shopOptions = document.querySelector("#shopOptions");
-const shopMessage = document.querySelector("#shopbees");
+const shopMessage = document.querySelector("#shopMessage");
 let buySell = document.querySelectorAll("h2 + ul li");
 let enterCancel = document.querySelectorAll("h3 + ul li");
 let shopItemName = document.querySelector("#shopItemName")
@@ -238,10 +238,15 @@ function enterCancelLoop(){
         enterCancel[i].addEventListener("click", function(){
             if(this == enterCancel[0]){
                 // run logic to process transaction
-                console.log("Order processing!");
                 // when enter is selected, run price of selected item against playertacos,
-                // if player has enough tacos, let them purchase the item
-                // else give an error message
+                if(shopInventory[this] <= playerTacos){
+                    // if player has enough tacos, let them purchase the item
+                    playerInventory += shopInventory[this];
+                    playerTacos -= ShopInventory[this][price];
+                } else {
+                    // else give an error message
+                    shopMessage.textContent = "Looks like you need some more tacos my dude"
+                }
             } else {
                 hideBoxes();
             }
