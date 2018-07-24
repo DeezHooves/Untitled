@@ -36,10 +36,14 @@ player.choiceBoxOpen = false;
 checker.posX = 400;
 checker.posY = 460;
 
-var shopInventory = {
+var items = {
     bomb: {price: 85, qty: 10},
     potion: {price: 35, qty: 5},
     arrow: {price: 5, qty: 50}
+}
+
+var shopInventory = {
+    
 }
 
 var playerTacos = 250
@@ -237,12 +241,15 @@ function enterCancelLoop(){
     for(var i = 0; i < enterCancel.length; i++){
         enterCancel[i].addEventListener("click", function(){
             if(this == enterCancel[0]){
+                var selection = this;
                 // run logic to process transaction
                 // when enter is selected, run price of selected item against playertacos,
-                if(shopInventory[this] <= playerTacos){
+                if(shopInventory.selection <= playerTacos){
                     // if player has enough tacos, let them purchase the item
-                    playerInventory += shopInventory[this];
-                    playerTacos -= ShopInventory[this][price];
+                    playerInventory += shopInventory.selection;
+                    playerTacos -= shopInventory.this.price;
+                    // add the item to the players inventory
+
                 } else {
                     // else give an error message
                     shopMessage.textContent = "Looks like you need some more tacos my dude"
