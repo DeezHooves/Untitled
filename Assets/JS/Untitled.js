@@ -36,15 +36,20 @@ player.choiceBoxOpen = false;
 checker.posX = 400;
 checker.posY = 460;
 
-var items = {
-    bomb: {price: 85, qty: 10},
-    potion: {price: 35, qty: 5},
-    arrow: {price: 5, qty: 50}
+var masterItemList = {
+    bomb: {price: 85},
+    potion: {price: 35},
+    arrow: {price: 5}
 }
 
 var shopInventory = {
-    
+    bomb: 10,
+    potion: 5,
+    arrow: 50
 }
+
+// in master item list, items don't need the qty property as it's only effective to shop
+// player doesn't need items with price property
 
 var playerTacos = 250
 
@@ -206,8 +211,8 @@ function buySellLoop(){
                 // shopHeader.classList.add("flex")
                 // shopPricing.classList.add("flex")
                 shopInterface.classList.remove("hide");
+                var statusMessage = document.querySelector("div#shopTop div.shopFirst").textContent = "Buying!";
                 playerCurrentTacos.textContent = playerTacos
-                shopHeader.textContent = "Buying!";
                 shopList.innerHTML = "";
                 for(var item in shopInventory) {
                     // create an element for each item, and instert that into the list 
@@ -241,15 +246,15 @@ function enterCancelLoop(){
     for(var i = 0; i < enterCancel.length; i++){
         enterCancel[i].addEventListener("click", function(){
             if(this == enterCancel[0]){
-                var selection = this;
+                var selection = document.querySelector("div#shopList li.selected").itemtype;
+                console.log("ey ur buyin shit")
                 // run logic to process transaction
                 // when enter is selected, run price of selected item against playertacos,
-                if(shopInventory.selection <= playerTacos){
+                if(shopInventory[selection] > 0 && masterItemList[selection].price <= playerTacos){
                     // if player has enough tacos, let them purchase the item
-                    playerInventory += shopInventory.selection;
-                    playerTacos -= shopInventory.this.price;
+                    playerTacos -= masterItemList[selection].price;
+                    buyItem(selection)
                     // add the item to the players inventory
-
                 } else {
                     // else give an error message
                     shopMessage.textContent = "Looks like you need some more tacos my dude"
@@ -268,5 +273,5 @@ function selectShopItem(li){
     })
     li.classList.add("selected");
     shopItemName.innerHTML = li.itemtype;
-    shopItemPrice.innerHTML = shopInventory[li.itemtype].price;
+    shopItemPrice.innerHTML = masterItemList[li.itemtype].price;
 }
