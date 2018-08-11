@@ -9,9 +9,9 @@ function buyItem(item){
         playerInventory[item] = 1;
     }
     shopInventory[item] - 1;
-    var message = `Thanks for buying my ${item}!!`
+    var message = `Thanks for the ${item}!!`;
     shopMessage.innerHTML = message;
-    playerCurrentTacos.textContent = playerTacos
+    playerCurrentTacos.textContent = playerTacos;
 };
 
 function sellItem(item){
@@ -19,12 +19,19 @@ function sellItem(item){
     if(playerInventory[item]){
         // if so, subtract 1 from qty
         playerInventory[item] -= 1;
+    } else {
+
     }
     shopInventory[item] + 1;
-    var message = `Thanks for the ${item}!!`
+    var message = `Thanks for the ${item}!!`;
     shopMessage.innerHTML = message;
-    playerCurrentTacos.textContent = playerTacos
+    playerCurrentTacos.textContent = playerTacos;
 };
 
+// function shopUpdate(){
+//     var message = `Thanks for the ${item}!!`;
+//     shopMessage.innerHTML = message;
+//     playerCurrentTacos.textContent = playerTacos;
+// }
 
 //abstraction
